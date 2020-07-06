@@ -10,7 +10,7 @@ wget http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.b
 ```
 ## Perform text extraction from dump preserve the links (-l)
 ```
-python3 WikiExtractor.py -o ../data/wiki/ -l --no_templates --processes 8 ../data/enwiki-latest-pages-articles.xml.bz2   
+python3 WikiExtractor.py -o <output_folder> -l --no_templates --processes 8 <path_to_bz2_file>   
 ```
 ## Find all the hrefs from the text files, unique and sort them to a file 
 ```
