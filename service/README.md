@@ -250,12 +250,3 @@ For windows running the flask service is a little more complicated. There are tw
 - Using apache + [mod_wsgi](https://pypi.org/project/mod-wsgi/)
 - Installing a linux Virtual Machine (e.g. virtualbox) on the windows machine to host the application
    and proxy the requests from local IIS to the virtual system
-
-
-# Acknowledgments
-This work is developed by [AILab](http://ailab.ijs.si/) at [Jozef Stefan Institute](https://www.ijs.si/).
-
-The work is supported by the [EnviroLens project](https://envirolens.eu/),
-a project that demonstrates and promotes the use of Earth observation as direct evidence for environmental law enforcement,
-including in a court of law and in related contractual negotiations, and the [X5GON project](https://www.x5gon.org/), a project that
-is connecting different Open Educational Resources (OER) providers around the globe.
