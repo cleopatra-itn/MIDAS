@@ -21,16 +21,16 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv,"hi:oc:",["ifile=","ofile=","completed="])
 	except getopt.GetoptError:
-		print 'query_dbpedia.py -i <inputfile> -o <outputfile> -c <completedfile>'
+		print('query_dbpedia.py -i <inputfile> -o <outputfile> -c <completedfile>')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print 'test.py -i <inputfile> -o <outputfile> -c <completedfile'
+			print('query_dbpedia.py -i <inputfile> -o <outputfile> -c <completedfile')
 			sys.exit()
 		elif opt in ("-i", "--ifile"):
 			inputfile = arg
 		elif opt in ("-o", "--ofile"):
-			outputfile = 
+			outputfile = arg
 		elif opt in ("-c", "--completed"):
 			completedfile = arg
 	if outputfile == '':
@@ -85,8 +85,8 @@ def main(argv):
 	            except Exception as e:
 	                error_log.write(entity+"\n")
 	        else:
+	        	continue
             	#print("already processed",entity)
-            	continue
 
 if __name__ == "__main__":
-   main(sys.argv[1:]
+	main(sys.argv[1:])
