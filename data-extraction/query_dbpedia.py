@@ -25,7 +25,7 @@ def main(argv):
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print('query_dbpedia.py -i <inputfile> -o <outputfile> -c <completedfile')
+			print('query_dbpedia.py -i <inputfile> -o <outputfile> -c <completedfile>')
 			sys.exit()
 		elif opt in ("-i", "--ifile"):
 			inputfile = arg
@@ -36,7 +36,7 @@ def main(argv):
 	if outputfile == '':
 		outputfile = 'query_dbpedia_output.txt'
 	if completedfile == '':
-		completedfile = 'completed.txt'
+		completedfile = 'query_dbpedia_completed.txt'
 
 	# read the entities to be queried
 	file=open(script_dir + inputfile,"r")
@@ -60,33 +60,33 @@ def main(argv):
 	list_entities = []
 	i = 0
 
-	with open(script_dir + outputfile, "w") as dbpedia_result_file, open(script_dir + completedfile,"a") as completed, open("error.log","a+") as error_log:
-	    for entity in sentences:
-	        entity = re.search("\"(.*?)\"", entity.strip("\n"))
-	        # check if entity is already checked
-	        print(entity,entitiy.group())
-	        entity = entity.group()[1:-1] # "a"=>a
-	        if entity not in completed_entities:
-	            try:
-	                info = sparql_query(unquote(entity))
-	                json.dump(info, dbpedia_result_file)
-	                
-	                completed_entities.append(entity)
-	                
-	                dbpedia_result_file.write("\n")
-	                completed.write(entity+"\n")
+	with open(script_dir + outputfile, "w") as dbpedia_result_file, open(script_dir + completedfile,"a") as completed, open(script_dir + "query_dbpedia_error.log","a+") as error_log:
+		for entity in sentences:
+			entity = re.search("\"(.*?)\"", entity.strip("\n"))
+			# check if entity is already checked
+			print(entity.group())
+			entity = entity.group()[1:-1] # "a"=>a
+			if entity not in completed_entities:
+				try:
+					info = sparql_query(unquote(entity.replace("%20","_")))
+					json.dump(info, dbpedia_result_file)
 
-	                #print(entity)
-	                if (i % 1000 == 0):
-	                    print(i, len(list_entities), sep="/")
-	                    dbpedia_result_file.flush()
-	                    completed.flush()
-	                i += 1
-	            except Exception as e:
-	                error_log.write(entity+"\n")
-	        else:
-	        	continue
-            	#print("already processed",entity)
+					completed_entities.append(entity)
+
+					dbpedia_result_file.write("\n")
+					completed.write(entity+"\n")
+
+					#print(entity)
+					if (i % 1000 == 0):
+						print(i, len(list_entities), sep="/")
+						dbpedia_result_file.flush()
+						completed.flush()
+					i += 1
+				except Exception as e:
+					error_log.write(entity+"\n")
+			else:
+				continue
+				#print("already processed",entity)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
