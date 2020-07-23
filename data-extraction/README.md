@@ -5,19 +5,19 @@
 ### 1.1. Clone the wiki extractor
 
 ```
-git clone https://github.com/attardi/wikiextractor.git   
+git clone https://github.com/attardi/wikiextractor.git
 ```
 ### 1.2. Get the latest wikipedia dump (En for now)
 ```
-wget http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2    
+wget http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ```
 ### 1.3. Perform text extraction from dump preserve the links (-l)
 ```
-python3 WikiExtractor.py -o <output_folder> -l --no_templates --processes 8 <path_to_bz2_file>   
+python3 WikiExtractor.py -o <output_folder> -l --no_templates --processes 8 <path_to_bz2_file>
 ```
 ### 1.4. Find all the hrefs from the text files, unique and sort them to a file 
 ```
-find ./ -name 'wiki*' | xargs grep -o -P "(<a href=\").*?\">" | sort -u > <outputfile>                                                                                                      
+find ./ -name 'wiki*' | xargs grep -o -P "(<a href=\").*?\">" | sort -u > <outputfile>
 ```
 This outputs linked entities from Wikipedia articles as a list of strings.
 
