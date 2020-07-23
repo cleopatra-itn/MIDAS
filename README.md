@@ -1,5 +1,8 @@
 # MIDAS Demonstrator
 
+## Link to the demonstrator
+[http://cleopatra.ijs.si/midas/](http://cleopatra.ijs.si/midas/)
+
 ## Contributors
 - Diego Alves (ESR14)
 - Gabriel Maia (ESR3)
@@ -19,9 +22,8 @@ More to be developed and deployed in the future.
 	Note: You can generate datasets and train your own models by using the code available in this repository.
 
 ## UI Functionalities
-The main UI for this demonstrator is located at: [http://cleopatra.ijs.si/midas/](http://cleopatra.ijs.si/midas/).
-Currently, it only supports the languages listed above.
-It has the following functionalities:
+Currently, the demonstrator only supports the languages listed above.
+It has the following UI functionalities:
 - Raw text NERC annotation using the UNER hierarchy;
 - Selection of Coarse-grained vs Fine-grained annotations;
 - Webpage annotation functionality based on the URL;
@@ -29,11 +31,13 @@ It has the following functionalities:
 - Text file input and NERC-annotated text file output functionalities (in progress).
 
 ## Relevant Publications
-- [UNER: Universal Named-Entity Recognition Framework (CLEOPATRA Workshop 2020 co-located with ESWC)](UNER-documentation/UNER_Universal_Named-Entity_Recognition_Framework_paper.pdf). 
+- [UNER: Universal Named-Entity Recognition Framework (CLEOPATRA Workshop 2020 co-located with ESWC)](uner-documentation/UNER_Universal_Named-Entity_Recognition_Framework_paper.pdf). 
 
 ## About this Repository
 
 This repository makes available:
-- [The **Documentation**](Uner-documentation/): Documents, files and publications that serve to explain design decisions and work done.
-
-
+- [The Documentation](uner-documentation/): Documents, files and publications that serve to explain design decisions and work done towards both the UNER tagging hierarchy and the demonstrator.
+- [The code for dataset creation](data-extraction/): Code that allows you to download dumps from Wikipedia, cross hyperlinks with DBpedia classes and generate a dataset for a given language.
+- [The UI code](front/): Code to run an Angular user interface, as seen in the demonstraror.
+- [The server code](service/): Code and trained models that serve the tagging functionality seen in the demonstrator.
+- [Testing code](test/): Code to create test cases for the demonstrator.
