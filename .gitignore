@@ -1,4 +1,5 @@
 data-analysis/*
 data-extraction/wiki/*
 data-extraction/*txt
-data-extraction/step3_output/*
+data-extraction/*/wiki_*.txt
+data-extraction/*/wiki_*.pkl
