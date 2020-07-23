@@ -8,22 +8,26 @@ def main(argv):
 	inputfile = ''
 	outputfile = ''
 	try:
-		opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+		opts, args = getopt.getopt(argv,"hi:o:b:",["ifile=","ofile=", "blanks="])
 	except getopt.GetoptError:
-		print('class_extract_dbpedia.py -i <inputfile> -o <outputfile>')
+		print('class_extract_dbpedia.py -i <inputfile> -o <outputfile> -b <blanks>')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print('class_extract_dbpedia.py -i <inputfile> -o <outputfile>')
+			print('class_extract_dbpedia.py -i <inputfile> -o <outputfile> -b <blanks>')
 			sys.exit()
 		elif opt in ("-i", "--ifile"):
 			inputfile = arg
 		elif opt in ("-o", "--ofile"):
 			outputfile = arg
+		elif opt in ("-b", "--blanks"):
+			blanksfile = arg
 	if outputfile == '':
 		outputfile = 'class_extract_dbpedia_output.txt'
+	if blanksfile == '':
+		blanksfile = 'class_extract_dbpedia_blanks.txt'
 
-	with open(script_dir + inputfile, 'r') as f, open(script_dir + outputfile, "w") as outputfile, open(script_dir + "class_extract_dbpedia_blanks.txt","w") as blankfile:
+	with open(script_dir + inputfile, 'r') as f, open(script_dir + outputfile, "w") as outputfile, open(script_dir + blanksfile,"w") as blankfile:
 		for index, line in enumerate(f):
 			try:
 				data_item = json.loads(line)

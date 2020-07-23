@@ -99,26 +99,30 @@ def main(argv):
 	unerpath = ''
 	wikipath = ''
 	inputfile = ''
-	outputfile = ''
+	outputfolder = ''
 	try:
 		opts, args = getopt.getopt(argv,"hi:o",["ifile=","ofile=","unerpath=","wikipath="])
 	except getopt.GetoptError:
-		print('step3.py -i <inputfile> -o <outputfile> --unerpath <unerpath> --wikipath <wikipath>')
+		print('process_wiki_files.py -i <inputfile> -o <outputfolder> --unerpath <unerpath> --wikipath <wikipath>')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print('step3.py -i <inputfile> -o <outputfile> --unerpath <unerpath> --wikipath <wikipath>')
+			print('process_wiki_files.py -i <inputfile> -o <outputfolder> --unerpath <unerpath> --wikipath <wikipath>')
 			sys.exit()
 		elif opt in ("-i", "--ifile"):
 			inputfile = arg
 		elif opt in ("-o", "--ofile"):
-			outputfile = arg
+			outputfolder = arg
 		elif opt in ("--unerpath"):
 			unerpath = arg
 		elif opt in ("--wikipath"):
 			wikipath = arg
-	if outputfile == '':
-		outputfile = 'step3_output'
+	if outputfolder == '':
+		outputfolder = 'process_wiki_files_output'
+	
+	if not os.path.exists(script_dir + outputfolder):
+		os.mkdir(script_dir + outputfolder)
+
 	if wikipath == '':
 		wikipath = script_dir + 'wiki'
 	if unerpath == '':
@@ -175,7 +179,7 @@ def main(argv):
 			wiki_files_to_be_processed.append(os.path.join(wiki_dir,wiki_file))
 
 
-	process_wiki_files(wikipath, "AC/wiki_50", wiki_entities_dbpedia_class, dbpedia_uner_mapping, script_dir + outputfile)
+	process_wiki_files(wikipath, "AC/wiki_50", wiki_entities_dbpedia_class, dbpedia_uner_mapping, script_dir + outputfolder)
 
 
 

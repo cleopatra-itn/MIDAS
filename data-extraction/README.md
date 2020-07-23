@@ -37,10 +37,21 @@ This script will use the output file from step 1.4 as input file. It will write 
 
 ### 2.3. Run script _class_extract_dbpedia.py_ to extract dbpedia classes
 ```
-python class_extract_dbpedia.py -i <inputfile> -o <outputfile>
+python class_extract_dbpedia.py -i <inputfile> -o <outputfile> -b <blanksfile>
 ```
 This script will use the output file from step 2.2 as input file. It outputs two files:
 - An output file with entities and their classes according to DBpedia;
 - A blanks file with all entities which did not have any type associated to it, along with their SPAQRL responses.
 
+### 2.4. Run script _process_wiki_files.py_ to produce UNER tagged data
+```
+python process_wiki_files.py -i <inputfile> -o <outputfolder> --unerpath <unerpath> --wikipath <wikipath>
+```
+This script will use the output file from step 2.3 as input file.
+You can also specify the path to the UNER mapping and the path to the wikipedia dumps. If you leave them empty, they default to the _wiki_ and the _uner_ folders.
+You can also specify the output folder for all output produced. It defaults to _process_wiki_files_output_.
 
+This generates as output:
+- A folder with a subfolder for each wikipedia partition. Each subfolder has a txt file with the annotations and a pkl file with a pickled annotation data structure. 
+
+This output can then be used to train a tagging model for that language.
