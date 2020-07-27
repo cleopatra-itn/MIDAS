@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+.entities {
+    line-height: 2;
+}
+
+[data-entity] {
+    padding: 0.25em 0.35em;
+     margin: 0px 0.25em;
+     line-height: 1;
+     display: inline-block;
+     border-radius: 0.25em;
+     border: 1px solid;
+}
+
+[data-entity]::after {
+    box-sizing: border-box;
+    content: attr(data-entity);
+    font-size: 0.6em;
+    line-height: 1;
+    padding: 0.35em;
+    border-radius: 0.35em;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 0px 0.1rem 0.5rem;
+}
+
+[data-entity][data-entity="person"] {
+    background: rgba(166, 226, 45, 0.2);
+    border-color: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="person"]::after {
+    background: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="org"] {
+    background: rgba(67, 198, 252, 0.2);
+    border-color: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="org"]::after {
+    background: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="date"] {
+    background: rgba(47, 187, 171, 0.2);
+    border-color: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="date"]::after {
+    background: rgb(47, 187, 171);
+}
+[data-entity][data-entity="date"] {
+    background: rgba(47, 187, 171, 0.2);
+    border-color: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="date"]::after {
+    background: rgb(47, 187, 171);
+}
+
+
+
+[data-entity][data-entity="gpe"] {
+    background: rgba(192, 95, 16, 0.2);
+    border-color: rgb(192, 95, 16);
+}
+
+[data-entity][data-entity="gpe"]::after {
+    background: rgb(192, 95, 16);
+}
+
+[data-entity][data-entity="cardinal"] {
+    background: rgba(164, 224, 95, 0.2);
+    border-color: rgb(164, 224, 95);
+}
+
+[data-entity][data-entity="cardinal"]::after {
+    background: rgb(164, 224, 95);
+}
+
+[data-entity][data-entity="POSITIVE"] {
+    background: rgba(72, 192, 16, 0.2);
+    border-color: rgb(72, 192, 16);
+}
+
+[data-entity][data-entity="POSITIVE"]::after {
+    background: rgb(192, 95, 16);
+}
+
+[data-entity][data-entity="NEUTRAL"] {
+    background: rgba(228, 233, 229, 0.2);
+    border-color: rgb(228, 233, 229);
+}
+
+[data-entity][data-entity="NEUTRAL"]::after {
+    background: rgb(228, 233, 229);
+}
+
+[data-entity][data-entity="NEGATIVE"] {
+    background: rgba(223, 73, 14, 0.2);
+    border-color: rgb(223, 73, 14);
+}
+
+[data-entity][data-entity="NEGATIVE"]::after {
+    background: rgb(223, 73, 14);
+}

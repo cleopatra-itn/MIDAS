@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img height="180" src="assets/logo.png" alt="" (click)="show()">
+            <!-- Creates the bootstrap modal where the image will appear -->
+            <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1"
+                role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">UNER Scheme V1</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="assets/UNER_scheme_v1.0.svg"
+                                id="imagepreview" style="height:100%; width: 100%;" > -->
+                                <!-- width="400" height="700" -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                (click)="hide()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="">
+                <h1 class="display-4"></h1>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary" [disabled]="isTextOrLink =='1'"
+                        (click)="onToggle('1')">Text</button>
+                    <button type="button" class="btn btn-secondary" [disabled]="isTextOrLink =='2'"
+                        (click)="onToggle('2')">URL</button>
+                    <button type="button" class="btn btn-secondary" [disabled]="isTextOrLink=='3'"
+                        (click)="onToggle('3')">File</button>
+                </div>
+                <div>
+                    <form *ngIf="isTextOrLink =='1'" name="textForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="textDocument">Enter Text</label>
+                            <textarea class="form-control" [(ngModel)]="textDocument" id="textDocument"
+                                name="textDocument" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!-- code to render the regular video block -->
+                    <form *ngIf="isTextOrLink =='2'" name="linkForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="newspaperUrl">Enter URL</label>
+                            <input required type="text" [(ngModel)]="newspaperUrl" class="form-control"
+                                id="newspaperUrl" name="newspaperUrl" aria-label="URL" aria-describedby="basic-addon1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <form *ngIf="isTextOrLink =='3'" name="linkForm" #fileForm="ngForm" (ngSubmit)="onUploadFile(fileForm)" > 
+                        <div class="form-group">
+                            <label for="newspaperUrl">Choose File </label>
+                            <input #myInput  class="form-control-file" name="fileUpload" type="file" (change)="fileChanged($event)">
+                        </div>
+                        <button [disabled]="!fileIsUploaded()" class="btn btn-primary">Submit</button>
+                        <div class="my-3"></div>
+                        <div *ngIf="isError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Holy guacamole!</strong> {{errorMesssage}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- Code to display annotated text NER -->
+            <div>
+                <!-- TODO put the model variable from the server -->
+                <!-- <div class="entities">
+
+                    When <mark data-entity="person">Sebastian Thrun</mark> started working on self-driving cars at
+                    <mark data-entity="org">Google</mark> in <mark data-entity="date">2007</mark>, few people outside of
+                    the
+                    company took him seriously.
+
+                    
+                </div> -->
+                <div class="entities" [innerHTML]="predictionsNer"></div>
+            </div>
+            <div class="border-top my-3"></div>
+            <!-- Code to display annotated text NER -->
+            <!-- <div class="panel panel-default">
+                <div class="panel-body"></div>
+                <div class="entities" [innerHTML]="predictionsSentiment"></div>
+            </div> -->
+            <!-- Code to display annotated text NER -->
+            <!-- <div>
+                <div  class="container entities" [innerHTML]="predictionsEvent"></div>
+            </div> -->
+        </div>
+        <div class="col-md-3">
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="language">Language:</label> 
+                        <select class="custom-select" [(ngModel)]="selectedLang" id="language">
+                            <option *ngFor="let option of lang_options" [value]="option">
+                                {{option}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group"> 
+                        <label for="degree">Complexity:</label>
+                        <select class="custom-select"  [(ngModel)]="selectedDegree" id="degree">
+                            <option *ngFor="let option of degree_options" [value]="option">
+                                {{option}}
+                            </option>
+                        </select>
+                    </div>
+                    <!-- <button type="button" class="btn btn-link" (click)="onToggleAll()">Select All</button>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="tagNER"
+                                (change)="tagNER = !tagNER" id="nerCheck">
+                            <label class="form-check-label" for="nerCheck">
+                                Named Entities
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="tagSA" (change)="tagSA = !tagSA"
+                                id="saCheck">
+                            <label class="form-check-label" for="saCheck">
+                                Sentiment Analysis
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="tagEvent"
+                                (change)="tagEvent = !tagEvent" id="eventCheck">
+                            <label class="form-check-label" for="eventCheck">
+                                Events
+                            </label>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
