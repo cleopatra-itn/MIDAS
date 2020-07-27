@@ -40,4 +40,4 @@ This repository makes available:
 - [The code for dataset creation](data-extraction/): Code that allows you to download dumps from Wikipedia, cross hyperlinks with DBpedia classes and generate a dataset for a given language.
 - [The UI code](front/): Code to run an Angular user interface, as seen in the demonstraror.
 - [The server code](service/): Code and trained models that serve the tagging functionality seen in the demonstrator.
-- [Testing code](test/): Code to create test cases for the demonstrator.
+- [Testing code](tests/): Code to create test cases for the demonstrator.
