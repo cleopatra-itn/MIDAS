@@ -13,7 +13,7 @@ from .src import engine
 # from .src.subjectivity import subjectivity
 def create_app(args=None):
     # create and configure the app
-    app = Flask(__name__, static_url_path='', static_folder='static', instance_relative_config=True)
+    app = Flask(__name__, static_url_path='/midas', static_folder='static', instance_relative_config=True, template_folder="templates")
 
     # add user provided configurations for the
     if args:
