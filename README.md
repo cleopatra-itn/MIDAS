@@ -41,5 +41,3 @@ This repository makes available:
 - [The UI code](front/): Code to run an Angular user interface, as seen in the demonstraror.
 - [The server code](service/): Code and trained models that serve the tagging functionality seen in the demonstrator.
 - [Testing code](tests/): Code to create test cases for the demonstrator.
-
-## Future Work
