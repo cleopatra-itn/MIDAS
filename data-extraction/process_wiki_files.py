@@ -56,7 +56,7 @@ def process_wiki_files(wiki_folder_path, wiki_file_path, wiki_entities_dbpedia_c
 				# keep track if there are entities in the line
 				any_entities_found=False
 				if line :
-					soup = BeautifulSoup(line)
+					soup = BeautifulSoup(line,"lxml")
 
 					for span in soup.select('a[href]'):
 						sup = soup.new_tag('ne')
@@ -179,9 +179,39 @@ def main(argv):
 			wiki_files_to_be_processed.append(os.path.join(wiki_dir,wiki_file))
 
 
-	process_wiki_files(wikipath, "AC/wiki_50", wiki_entities_dbpedia_class, dbpedia_uner_mapping, script_dir + outputfolder)
+	for doc_path in wiki_files_to_be_processed:
+		process_wiki_files(wikipath, doc_path, wiki_entities_dbpedia_class, dbpedia_uner_mapping, script_dir + outputfolder)
 
 
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
+	class config:
+		OUTPUT_PATH = "process_wiki_files_output"
+
+	### How many sentences do we have ?
+	some_tokens = []
+	lines =0
+	wiki_dirs = [name for name in os.listdir(config.OUTPUT_PATH) if os.path.isdir(os.path.join(config.OUTPUT_PATH, name)) ]
+	# for each folder
+	for wiki_dir in wiki_dirs:
+	    full_folder_path = os.path.join(config.OUTPUT_PATH,wiki_dir)
+	    for wiki_file in os.listdir(full_folder_path):
+	        if not wiki_file.endswith(".pkl"):
+	            #load the file
+	            with open(os.path.join(full_folder_path,wiki_file.strip(".txt"))+'.pkl', "rb") as fp:   # Unpickling
+	                b = pickle.load(fp)
+	                for i in b:
+	                    lines +=1
+	                    for j in i:
+	                        if len(j)>1:
+	                            some_tokens.append(j[1])
+
+	count_file=open("Entities_Statistics","w")
+	count_file.write("Number of sentences in corpus: " + str(lines) + "\n\n")
+	count_file.write("Number of sentences in corpus: " + str(len(some_tokens)) + "\n\n")
+	cnt = Counter(some_tokens)
+	count_file.write("Number of entities per Named-Entity class:\n")
+
+	for i in cnt.items():
+	    count_file.write(i[0] + "\t" + str(i[1]) + "\n")

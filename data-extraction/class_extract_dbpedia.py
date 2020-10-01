@@ -2,6 +2,7 @@ import os
 import json
 import sys
 import getopt
+import codecs
 
 def main(argv):
 	script_dir = os.path.dirname(__file__)
@@ -27,7 +28,7 @@ def main(argv):
 	if blanksfile == '':
 		blanksfile = 'class_extract_dbpedia_blanks.txt'
 
-	with open(script_dir + inputfile, 'r') as f, open(script_dir + outputfile, "w") as outputfile, open(script_dir + blanksfile,"w") as blankfile:
+	with open(script_dir + inputfile, 'r') as f, codecs.open(script_dir + outputfile, "w","UTF-8") as outputfile, codecs.open(script_dir + blanksfile,"w","UTF-8") as blankfile:
 		for index, line in enumerate(f):
 			try:
 				data_item = json.loads(line)

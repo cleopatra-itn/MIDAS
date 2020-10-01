@@ -53,5 +53,6 @@ You can also specify the output folder for all output produced. It defaults to _
 
 This generates as output:
 - A folder with a subfolder for each wikipedia partition. Each subfolder has a txt file with the annotations and a pkl file with a pickled annotation data structure. 
+- A file called 'Entities_Statistics' with statistical information of the generated corpus.
 
 This output can then be used to train a tagging model for that language.
