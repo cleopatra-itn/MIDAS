@@ -4,3 +4,4 @@ data-extraction/*.txt
 data-extraction/*.log
 data-extraction/*/wiki_*.txt
 data-extraction/*/wiki_*.pkl
+.vscode/settings.json

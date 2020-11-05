@@ -9,6 +9,7 @@ import pickle
 from pathlib import Path
 import urllib
 import re
+from collections import Counter
 
 def convert_xml_iob(line, dbpedia_uner_mapping):
 	ENT = set(dbpedia_uner_mapping.values())
@@ -169,6 +170,7 @@ def main(argv):
 
 
 
+
 	wiki_files_to_be_processed =[]
 	# list all the folders containing wikipedia processed files 
 	wiki_dirs = [name for name in os.listdir(wikipath) if os.path.isdir(os.path.join(wikipath, name)) ]
@@ -209,7 +211,7 @@ if __name__ == "__main__":
 
 	count_file=open("Entities_Statistics","w")
 	count_file.write("Number of sentences in corpus: " + str(lines) + "\n\n")
-	count_file.write("Number of sentences in corpus: " + str(len(some_tokens)) + "\n\n")
+	count_file.write("Number of tokens in corpus: " + str(len(some_tokens)) + "\n\n")
 	cnt = Counter(some_tokens)
 	count_file.write("Number of entities per Named-Entity class:\n")
 
