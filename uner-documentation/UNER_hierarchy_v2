@@ -1,0 +1,125 @@
+| Level 1  | Level 2        | Level 3                    | Level 4                      |
+|----------|----------------|----------------------------|------------------------------|
+| Name     | Color          |                            |                              |
+| Name     | Disease        |                            |                              |
+| Name     | Event          | Event_Other                |                              |
+| Name     | Event          | Historical_Event           |                              |
+| Name     | Event          | Natural_Phenomenon         | Earthquake                   |
+| Name     | Event          | Natural_Phenomenon         | Phenomenon_Other             |
+| Name     | Event          | Occasion_Other             |                              |
+| Name     | Event          | Occasion                   | Attack                       |
+| Name     | Event          | Occasion                   | Conference                   |
+| Name     | Event          | Occasion                   | Game                         |
+| Name     | Event          | Occasion                   | MilitaryConflict             |
+| Name     | Event          | Occasion                   | Occasion_Other               |
+| Name     | Event          | Personal                   |                              |
+| Name     | Facility       | Archaeological_Place       | Archaeological_Place_Other   |
+| Name     | Facility       | Facility_Other             |                              |
+| Name     | Facility       | GOE                        | Airport                      |
+| Name     | Facility       | GOE                        | Amusement_Park               |
+| Name     | Facility       | GOE                        | GOE_Other                    |
+| Name     | Facility       | GOE                        | Market                       |
+| Name     | Facility       | GOE                        | Museum                       |
+| Name     | Facility       | GOE                        | Park                         |
+| Name     | Facility       | GOE                        | Port                         |
+| Name     | Facility       | GOE                        | School                       |
+| Name     | Facility       | GOE                        | SchoolName                   |
+| Name     | Facility       | GOE                        | Sports_Facility              |
+| Name     | Facility       | GOE                        | Station                      |
+| Name     | Facility       | GOE                        | Theater                      |
+| Name     | Facility       | GOE                        | Worship_Place                |
+| Name     | Facility       | GOE                        | Zoo                          |
+| Name     | Facility       | Line                       | Bridge                       |
+| Name     | Facility       | Line                       | Canal                        |
+| Name     | Facility       | Line                       | Railroad                     |
+| Name     | Facility       | Line                       | Road                         |
+| Name     | Facility       | Line                       | Tunnel                       |
+| Name     | Location       | Astral_Body                | Astral_Body_Other            |
+| Name     | Location       | Astral_Body                | Star                         |
+| Name     | Location       | Constellation              |                              |
+| Name     | Location       | GPE                        | County                       |
+| Name     | Location       | Geological_Region_Island   |                              |
+| Name     | Location       | Geological_Region_Mountain |                              |
+| Name     | Location       | Geological_Region          | Bay                          |
+| Name     | Location       | Geological_Region          | Geological_Region_Other      |
+| Name     | Location       | Geological_Region          | Lake                         |
+| Name     | Location       | Geological_Region          | River                        |
+| Name     | Location       | Geological_Region          | Sea                          |
+| Name     | Location       | GPE                        | City                         |
+| Name     | Location       | GPE                        | Country                      |
+| Name     | Location       | GPE                        | GPE_Other                    |
+| Name     | Location       | GPE                        | Province                     |
+| Name     | Location       | Location_Other             |                              |
+| Name     | Location       | Astral_Body                | Planet                       |
+| Name     | Location       | Province                   |                              |
+| Name     | Location       | Region                     | Continental_Region           |
+| Name     | Location       | Region                     | Region_Other                 |
+| Name     | Natural_Object | Compound                   |                              |
+| Name     | Natural_Object | Element                    |                              |
+| Name     | Natural_Object | Living_Thing_Part          |                              |
+| Name     | Natural_Object | Living_Thing               | Amphibian                    |
+| Name     | Natural_Object | Living_Thing               | Bird                         |
+| Name     | Natural_Object | Living_Thing               | Fish                         |
+| Name     | Natural_Object | Living_Thing               | Fungus                       |
+| Name     | Natural_Object | Living_Thing               | Insect                       |
+| Name     | Natural_Object | Living_Thing               | Living_Thing_Other           |
+| Name     | Natural_Object | Living_Thing               | Mammal                       |
+| Name     | Natural_Object | Living_Thing               | Mollusc_Arthropod            |
+| Name     | Natural_Object | Living_Thing               | Plant                        |
+| Name     | Natural_Object | Living_Thing               | Reptile                      |
+| Name     | Natural_Object | Mineral                    |                              |
+| Name     | Organization   | Corporation                | Company                      |
+| Name     | Organization   | Corporation                | Company_Group                |
+| Name     | Organization   | Ethnic_Group_other         |                              |
+| Name     | Organization   | Family                     |                              |
+| Name     | Organization   | International_Organization |                              |
+| Name     | Organization   | Organization_Other         |                              |
+| Name     | Organization   | Political_Organization     | Cabinet                      |
+| Name     | Organization   | Political_Organization     | Government                   |
+| Name     | Organization   | Political_Organization     | Military                     |
+| Name     | Organization   | Political_Organization     | Political_Organization_Other |
+| Name     | Organization   | Political_Organization     | Political_Party              |
+| Name     | Organization   | Show_Organization          |                              |
+| Name     | Organization   | Sports_Organization        | Pro_Sports_Organization      |
+| Name     | Organization   | Sports_Organization        | Sports_League                |
+| Name     | Person         | Entity                     |                              |
+| Name     | Person         | Fictional                  |                              |
+| Name     | Person         | Name                       |                              |
+| Name     | Person         | Other                      |                              |
+| Name     | Person         | Profession                 |                              |
+| Name     | Place          | Location_Other             |                              |
+| Name     | Product        | Art                        | Art_Other                    |
+| Name     | Product        | Art                        | Book                         |
+| Name     | Product        | Art                        | Broadcast_Program            |
+| Name     | Product        | Art                        | Movie                        |
+| Name     | Product        | Art                        | Music                        |
+| Name     | Product        | Award                      |                              |
+| Name     | Product        | Decoration                 |                              |
+| Name     | Product        | Doctrine_Method            | Academic                     |
+| Name     | Product        | Doctrine_Method            | Culture                      |
+| Name     | Product        | Doctrine_Method            | Doctrine_Method_Other        |
+| Name     | Product        | Doctrine_Method            | Religion                     |
+| Name     | Product        | Doctrine_Method            | Sport                        |
+| Name     | Product        | Doctrine_Method            | Theory                       |
+| Name     | Product        | Drug                       | Substance                    |
+| Name     | Product        | Food_Other                 |                              |
+| Name     | Product        | Language                   | Language_Other               |
+| Name     | Product        | Language                   | National_Language            |
+| Name     | Product        | Printing                   | Magazine                     |
+| Name     | Product        | Printing                   | Newspaper                    |
+| Name     | Product        | Printing                   | Printing_Other               |
+| Name     | Product        | Product_Other              |                              |
+| Name     | Product        | Rule                       | Law                          |
+| Name     | Product        | Rule                       | Treaty                       |
+| Name     | Product        | Unit                       | Currency                     |
+| Name     | Product        | Vehicle                    | Aircraft                     |
+| Name     | Product        | Vehicle                    | Car                          |
+| Name     | Product        | Vehicle                    | Ship                         |
+| Name     | Product        | Vehicle                    | Spaceship                    |
+| Name     | Product        | Vehicle                    | Train                        |
+| Name     | Product        | Vehicle                    | Vehicle_Other                |
+| Name     | Product        | Weapon                     | Object                       |
+| Numex    | Measurement    | Measurement_Other          |                              |
+| Time_TOP | Time_TOP_Other |                            |                              |
+| Time_TOP | Timex          | Holiday                    |                              |
+| Time_TOP | Timex          | Time                       |                              |
