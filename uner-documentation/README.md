@@ -8,3 +8,4 @@ In this folder, we store the documents, files and papers which serve as document
 - [The UNER paper](UNER_Universal_Named-Entity_Recognition_Framework_paper.pdf): A paper in which we describe UNER.
 - [UNER_scheme_v1.0](UNER_scheme_v1.0.svg): A visual structure of the UNER hierarchy.
 - [UNER_v1.0](UNER_v1.0.xlsx): First version of the UNER hierarchy structure, with examples.
+- [UNER_v2.0](UNER_v2.0.xlsx): Second version of the UNER hierarchy structure, with examples.
