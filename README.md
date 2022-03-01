@@ -33,6 +33,18 @@ It has the following UI functionalities:
 ## Relevant Publications
 - [UNER: Universal Named-Entity Recognition Framework (CLEOPATRA Workshop 2020 co-located with ESWC)](uner-documentation/UNER_Universal_Named-Entity_Recognition_Framework_paper.pdf). 
 
+### Cite our paper
+```
+@article {article, year = {2020}, 
+pages = {72-79}, 
+keywords = {named-entity, 
+universality, low-resourced languages}, 
+title = {UNER: Universal Named-Entity Recognition Framework}, 
+keyword = { named-entity, universality, low-resourced languages}, 
+publisher = {CEUR Workshop Proceedings}, 
+publisherplace = {Heraklion, Gr \ v {c} ka}
+} 
+```
 ## About this Repository
 
 This repository makes available:
